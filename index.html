@@ -7,8 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/src/css/style.css">
 </head>
-<body>
-<div class="app">
+<body class="app" >
 
   <!-- HEADER -->
   <header>
@@ -20,8 +19,8 @@
       <button class="btn btn-icon" id="theme-toggle" title="Cambiar tema">🌙</button>
     </div>
   </header>
-
-  <!-- WELCOME BANNER (sessionStorage) -->
+<main>
+     <!-- WELCOME BANNER (sessionStorage) -->
   <div id="welcome-banner">
     <span>👋 Bienvenido de vuelta a tu workspace. ¡Vamos a ser productivos!</span>
     <button onclick="dismissWelcome()">Cerrar</button>
@@ -72,8 +71,11 @@
     <p>No hay tareas aquí.<br>¡Agrega una para empezar!</p>
   </div>
 
+</main>
+ 
+
   <!-- STORAGE EXPLAINER PANEL -->
-  <div class="storage-panel">
+  <!-- <div class="storage-panel">
     <h3>🗄️ Estructura de almacenamiento</h3>
     <div class="storage-grid">
       <div class="storage-card">
@@ -92,10 +94,7 @@
           <li>Banner de bienvenida</li>
         </ul>
       </div>
-    </div>
-  </div>
-
-</div>
+    </div>-->
 <script src="src/js/funciones.js"></script>
 </body>
 </html>
