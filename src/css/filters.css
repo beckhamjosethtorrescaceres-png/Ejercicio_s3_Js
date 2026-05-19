@@ -1,0 +1,37 @@
+/* ─────────────────────────────────────────
+   FILTROS
+   ───────────────────────────────────────── */
+
+.filters {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 5px;
+}
+
+.filter-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: 0.04em;
+}
+
+.filter-btn.active {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.filter-btn:not(.active):hover {
+  background: var(--surface2);
+  color: var(--text);
+}

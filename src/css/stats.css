@@ -1,0 +1,43 @@
+/* ─────────────────────────────────────────
+   STATS BAR
+   ───────────────────────────────────────── */
+
+.stats-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.stat {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  text-align: center;
+  transition: background var(--transition), border var(--transition);
+}
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text);
+}
+
+.stat-num.green {
+  color: var(--green);
+}
+
+.stat-num.accent {
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
