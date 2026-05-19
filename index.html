@@ -1,105 +1,34 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Workspace Inteligente</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/src/css/style.css">
+  <meta charset="UTF-8">
+  <title>Lista de Tareas</title>
 </head>
-<body class="app" >
+<body>
+    <button id="dark_mode" onclick="toggleTheme()">🌙 Modo oscuro</button>
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-left">
-      <h1>Work<span>space</span><br>Inteligente</h1>
-      <p class="date-line" id="date-line">Cargando fecha...</p>
-    </div>
-    <div class="header-right">
-      <button class="btn btn-icon" id="theme-toggle" title="Cambiar tema">🌙</button>
-    </div>
-  </header>
-<main>
-     <!-- WELCOME BANNER (sessionStorage) -->
-  <div id="welcome-banner">
-    <span>👋 Bienvenido de vuelta a tu workspace. ¡Vamos a ser productivos!</span>
-    <button onclick="dismissWelcome()">Cerrar</button>
-  </div>
+    <style>
+    body {
+        background: white;
+        color: black;
+    }
 
-  <!-- STATS -->
-  <div class="stats-bar">
-    <div class="stat">
-      <div class="stat-num" id="stat-total">0</div>
-      <div class="stat-label">Total</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num accent" id="stat-pending">0</div>
-      <div class="stat-label">Pendientes</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num green" id="stat-done">0</div>
-      <div class="stat-label">Completadas</div>
-    </div>
-  </div>
+    .dark {
+        background: #121212;
+        color: white;
+    }
+</style>
 
-  <!-- INPUT -->
-  <div class="input-area">
-    <div class="input-wrap">
-      <input type="text" id="task-input" placeholder="Nueva tarea..." maxlength="120" autocomplete="off"/>
-      <span class="char-count" id="char-count">0/120</span>
-    </div>
-    <button class="btn btn-primary" id="add-btn">+ Agregar</button>
-  </div>
+    <h1>Mis tareas</h1>
 
-  <!-- FILTERS -->
-  <div class="filters">
-    <button class="filter-btn active" data-filter="all">Todas</button>
-    <button class="filter-btn" data-filter="pending">Pendientes</button>
-    <button class="filter-btn" data-filter="completed">Completadas</button>
-  </div>
+    <input type="text" id="input" placeholder="Escribe una tarea">
+    <button onclick="addTask()">Agregar</button>
 
-  <!-- SEARCH -->
-  <div class="search-wrap">
-    <span class="search-icon">🔍</span>
-    <input type="text" id="search-input" placeholder="Buscar tarea..."/>
-  </div>
+    <div id="list"></div>
 
-  <!-- TASK LIST -->
-  <div id="task-list"></div>
-  <div id="empty-state">
-    <div class="empty-icon">📋</div>
-    <p>No hay tareas aquí.<br>¡Agrega una para empezar!</p>
-  </div>
+    <!-- IMPORTANTE: conecta el JS -->
+    <script src="./1.js"></script>
 
-</main>
- 
-
-  <!-- STORAGE EXPLAINER PANEL -->
-  <!-- <div class="storage-panel">
-    <h3>🗄️ Estructura de almacenamiento</h3>
-    <div class="storage-grid">
-      <div class="storage-card">
-        <h4 class="local">💾 localStorage</h4>
-        <ul>
-          <li>Lista de tareas (JSON)</li>
-          <li>Modo oscuro activo</li>
-          <li>Persiste al cerrar</li>
-        </ul>
-      </div>
-      <div class="storage-card">
-        <h4 class="session">⏱️ sessionStorage</h4>
-        <ul>
-          <li>Filtro activo actual</li>
-          <li>Texto de búsqueda</li>
-          <li>Banner de bienvenida</li>
-        </ul>
-      </div>
-    </div>-->
-<!-- Scripts: el orden importa -->
-    <script src="/src/js/storage.js"></script>
-    <script src="/src/js/tasks.js"></script>
-    <script src="/src/js/render.js"></script>
-    <script src="/src/js/ui.js"></script>
-    <script src="/src/js/main.js"></script>
 </body>
+
 </html>
