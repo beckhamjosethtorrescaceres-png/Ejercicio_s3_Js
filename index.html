@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workspace Inteligente</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="app">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <h1>Work<span>space</span><br>Inteligente</h1>
+      <p class="date-line" id="date-line">Cargando fecha...</p>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-icon" id="theme-toggle" title="Cambiar tema">🌙</button>
+    </div>
+  </header>
+
+  <!-- WELCOME BANNER (sessionStorage) -->
+  <div id="welcome-banner">
+    <span>👋 Bienvenido de vuelta a tu workspace. ¡Vamos a ser productivos!</span>
+    <button onclick="dismissWelcome()">Cerrar</button>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-num" id="stat-total">0</div>
+      <div class="stat-label">Total</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num accent" id="stat-pending">0</div>
+      <div class="stat-label">Pendientes</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num green" id="stat-done">0</div>
+      <div class="stat-label">Completadas</div>
+    </div>
+  </div>
+
+  <!-- INPUT -->
+  <div class="input-area">
+    <div class="input-wrap">
+      <input type="text" id="task-input" placeholder="Nueva tarea..." maxlength="120" autocomplete="off"/>
+      <span class="char-count" id="char-count">0/120</span>
+    </div>
+    <button class="btn btn-primary" id="add-btn">+ Agregar</button>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">Todas</button>
+    <button class="filter-btn" data-filter="pending">Pendientes</button>
+    <button class="filter-btn" data-filter="completed">Completadas</button>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search-input" placeholder="Buscar tarea..."/>
+  </div>
+
+  <!-- TASK LIST -->
+  <div id="task-list"></div>
+  <div id="empty-state">
+    <div class="empty-icon">📋</div>
+    <p>No hay tareas aquí.<br>¡Agrega una para empezar!</p>
+  </div>
+
+  <!-- STORAGE EXPLAINER PANEL -->
+  <div class="storage-panel">
+    <h3>🗄️ Estructura de almacenamiento</h3>
+    <div class="storage-grid">
+      <div class="storage-card">
+        <h4 class="local">💾 localStorage</h4>
+        <ul>
+          <li>Lista de tareas (JSON)</li>
+          <li>Modo oscuro activo</li>
+          <li>Persiste al cerrar</li>
+        </ul>
+      </div>
+      <div class="storage-card">
+        <h4 class="session">⏱️ sessionStorage</h4>
+        <ul>
+          <li>Filtro activo actual</li>
+          <li>Texto de búsqueda</li>
+          <li>Banner de bienvenida</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
