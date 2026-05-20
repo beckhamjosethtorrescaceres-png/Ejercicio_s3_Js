@@ -1,6 +1,5 @@
 let tasks = [];
 
-
 function init() {
   const isDark = localStorage.getItem("dark_mode") === "true";
   applyTheme(isDark);
@@ -12,7 +11,6 @@ function init() {
 
   render();
 }
-
 
 function applyTheme(isDark) {
   if (isDark) {
@@ -40,7 +38,6 @@ function addTask() {
   });
 
   localStorage.setItem("tasks", JSON.stringify(tasks));
-
   input.value = "";
   render();
 }
@@ -57,11 +54,22 @@ function deleteTask(index) {
   render();
 }
 
+function setFilter(filtro) {
+  sessionStorage.setItem("filtro_activo", filtro);
+  render();
+}
+
 function render() {
   const list = document.getElementById("list");
   list.innerHTML = "";
 
+  const filtro = sessionStorage.getItem("filtro_activo") || "todas";
+
   tasks.forEach((task, index) => {
+
+    if (filtro === "pendientes"  && task.completed === true)  return;
+    if (filtro === "completadas" && task.completed === false) return;
+
     list.innerHTML += `
       <div>
         <span onclick="toggleTask(${index})">

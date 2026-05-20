@@ -5,7 +5,7 @@
   <title>Lista de Tareas</title>
 </head>
 <body>
-    <button id="dark_mode" onclick="toggleTheme()">🌙 Modo oscuro</button>
+    <button id="dark_mode" onclick="toggleTheme()">Tema</button>
 
     <style>
     body {
@@ -23,6 +23,11 @@
 
     <input type="text" id="input" placeholder="Escribe una tarea">
     <button onclick="addTask()">Agregar</button>
+    <br><br>
+      <!-- NUEVO: botones de filtro -->
+  <button onclick="setFilter('todas')">Todas</button>
+  <button onclick="setFilter('pendientes')">Pendientes</button>
+  <button onclick="setFilter('completadas')">Completadas</button>
 
     <div id="list"></div>
 
